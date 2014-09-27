@@ -31,8 +31,7 @@ void setup()
 void loop()
 {
   Serial.println("Green  Red -- waiting on arrival");
-  digitalWrite(signal1RedPin,LOW);
-  digitalWrite(signal1GreenPin,HIGH);
+  crossFadeTwoTrafficLights(signal1RedPin,signal1GreenPin);
   // TO DO: Replace this delay with code to loop until the button is pressed.  Don't forget that the button will read LOW when pressed
   //delay(5000);
   while(digitalRead(arrivalSensorPin) == HIGH)
@@ -41,18 +40,15 @@ void loop()
   }
   
   Serial.println("Yellow Red");
-  digitalWrite(signal1GreenPin,LOW);
-  digitalWrite(signal1YellowPin,HIGH);
+  crossFadeTwoTrafficLights(signal1GreenPin,signal1YellowPin);
   delay(1000);
   
   Serial.println("Red    Red");
-  digitalWrite(signal1YellowPin,LOW);
-  digitalWrite(signal1RedPin,HIGH);
+  crossFadeTwoTrafficLights(signal1YellowPin,signal1RedPin);
   delay(500);
   
   Serial.println("Red    Green");
-  digitalWrite(signal2RedPin,LOW);
-  digitalWrite(signal2GreenPin,HIGH);
+  crossFadeTwoTrafficLights(signal2RedPin,signal2GreenPin);
   
   // TO DO:   Replace this delay with code to read the knob and map it to a delay.
   int delayTimingReading = analogRead(delayTimingPin);
@@ -65,15 +61,25 @@ void loop()
   delay(delayInMs);
   
   Serial.println("Red    Yellow");
-  digitalWrite(signal2GreenPin,LOW);
-  digitalWrite(signal2YellowPin,HIGH);
+  crossFadeTwoTrafficLights(signal2GreenPin,signal2YellowPin);
   delay(1000);
   
   Serial.println("Red    Red");
-  digitalWrite(signal2YellowPin,LOW);
-  digitalWrite(signal2RedPin,HIGH);
+  crossFadeTwoTrafficLights(signal2YellowPin,signal2RedPin);
   delay(500);
   
+}
+
+void crossFadeTwoTrafficLights(int fromPin, int toPin)
+{
+  // To cross fade, we need to write progressively increasing values to the "to" light, and
+  // progressively decreasing values to the "from" light
+  for(int i = 0; i <=255; i++)
+  {
+    analogWrite(toPin, i);          // Increases from 0 to 255
+    analogWrite(fromPin, 255 - i);  // Decreases from 255 to 0
+    delay(4);  // Fade will take place over 256 * 4 -- 1024 millisecond, or about second.
+  }
 }
 
 
