@@ -40,6 +40,7 @@ void setup()
     // Request/GET the page we want
     client.println("GET /edt/now HTTP/1.1");
     client.println("Host: www.timeapi.org");
+    client.println("User-Agent: arduino");
     client.println();
   }
   else

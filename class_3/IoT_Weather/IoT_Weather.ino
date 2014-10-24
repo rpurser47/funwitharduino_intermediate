@@ -12,7 +12,7 @@
 #include <Wire.h>
 
 // Tmp102 temperature sensor globals
-PROGMEM int tmp102Address = 0x48;
+PROGMEM const int tmp102Address = 0x48;
 
 // HH10D humidity sensor globals
 PROGMEM const int hh10dAddress = 81;
@@ -31,7 +31,7 @@ PROGMEM const unsigned int pinBlue = 5;
 // Ethernet card globals
 PROGMEM const unsigned int sdCardSelectPin = 4;
 // !!! You need to fill in the last byte here
-PROGMEM byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, ?? };
+byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, ?? };
 EthernetClient client;
 
 // !!! You need to fill in the Write API Key for your ThingSpeak Channel
