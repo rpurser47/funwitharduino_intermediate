@@ -8,6 +8,8 @@
 
 #include <SPI.h>
 #include <Ethernet.h>
+// This sketch requires the webduino library from
+// https://github.com/sirleech/Webduino
 #include <WebServer.h>
 #include <Wire.h>
 

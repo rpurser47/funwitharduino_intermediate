@@ -1,12 +1,15 @@
 // Fun with Arduino by Rob Purser is licensed under a
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 // http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US
-// Based on a work at https://sites.google.com/site/funarduino/
+// Based on a work at http://www.funwitharduino.net 
+// Copyright Rob Purser, 2013-2014
 // This file adapted from Arduino Ethernet Shield Web Server Tutorial 
 // http://startingelectronics.com/tutorials/arduino/ethernet-shield-web-server-tutorial/web-server-read-switch-using-AJAX/
 
 #include <SPI.h>
 #include <Ethernet.h>
+// This sketch requires the webduino library from
+// https://github.com/sirleech/Webduino
 #include <WebServer.h>
 #include <Wire.h>
 
