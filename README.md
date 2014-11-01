@@ -21,7 +21,6 @@ All the presentations associated with the course are available on [Google Drive]
 Code and schematics
 -------------------
 This repository contains the code and schematics for the Fun with Arduino intermediate course.
-Currently, I am migrating the code and schematics from Google Drive as I prepare for our October 2014 course.
 
 Licensing
 ---------
