@@ -129,6 +129,7 @@ void setup()
   // The ethernet interface is unreliable unless this is set high.
   pinMode(sdCardSelectPin, OUTPUT);
   digitalWrite(sdCardSelectPin, HIGH);
+  Wire.begin();
 
   // Connect the ethernet, set static IP address using Ethernet.begin
   Ethernet.begin(mac, ip);
