@@ -122,14 +122,16 @@ void loop()
   delay(5000);
 }
 
-String colorName[] = {"none","red","green","blue","cyan","white","warmwhite","purple","magenta","yellow","orange"};
+String colorName[] = {"none","red","pink","green","blue","cyan","white","warmwhite","oldlace","purple","magenta","yellow","orange"};
 int colorRGB[][3] = {     0,  0,  0, // "none"
                         255,  0,  0, // "red"
+                        255,192,203, // "pink"
                           0,255,  0, // "green"
                           0,  0,255, // "blue"
                           0, 255,255, // "cyan",
                         255, 50,100, // "white",
                         255, 30, 10, // "warmwhite",
+                        255, 30, 10, // "oldlace",
                         128,  0, 25, // "purple",
                         255,  0, 50, // "magenta",
                         255, 100,  0, // "yellow",
@@ -138,7 +140,7 @@ int colorRGB[][3] = {     0,  0,  0, // "none"
 
 void setColor(String color)
 {
-  for(int iColor = 0; iColor <= 10; iColor++)
+  for(int iColor = 0; iColor <= 12; iColor++)
   {
     if(color == colorName[iColor])
     {
